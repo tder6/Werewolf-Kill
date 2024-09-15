@@ -1,3 +1,4 @@
+// -fexec-charset=GBK, (捣)守狼女预猎(灵)(金)
 #include <bits/stdc++.h>
 using namespace std;
 #define int long long
@@ -87,7 +88,7 @@ signed main() {
 		}
 		for(int i = 1; i <= 6; i++) if(get(i) == "预") {
 			int k; cout<<"预言 "<<i<<"("<<top[i] + 1<<")"<<" 查 "; cin>>k;
-			cout<<"  "<<(type[get(k)] ? "好" : "坏")<<endl;
+			cout<<"  "<<((type[get(k)] || (type[cards[left(k)]] && type[cards[right(k)]])) ? "好" : "坏")<<endl;
 			break;
 		}
 		for(int i = 1; i <= 6; i++) if(get(i) == "猎") {
@@ -125,7 +126,6 @@ signed main() {
 		else cout<<"今日 "<<maxi[0]<<"("<<top[maxi[0]] + 1<<") 推牌"<<endl, die(maxi[0]);
 		cout<<endl;
 		system("pause");
-		// break;
 	}
 	return 0;
 }
