@@ -88,7 +88,7 @@ signed main() {
 		}
 		for(int i = 1; i <= 6; i++) if(get(i) == "预") {
 			int k; cout<<"预言 "<<i<<"("<<top[i] + 1<<")"<<" 查 "; cin>>k;
-			cout<<"  "<<((type[get(k)] || (type[cards[left(k)]] && type[cards[right(k)]])) ? "好" : "坏")<<endl;
+			cout<<"  "<<((type[get(k)] || (!type[cards[left(k)]] && !type[cards[right(k)]])) ? "好" : "坏")<<endl;
 			break;
 		}
 		for(int i = 1; i <= 6; i++) if(get(i) == "猎") {
